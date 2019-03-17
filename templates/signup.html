@@ -5,7 +5,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date]  {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -15,7 +15,7 @@ input[type=text], input[type=password] {
 }
 
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=date]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -98,25 +98,28 @@ h1, p {
         {% csrf_token %}
 
       <label for="id_username"><b>Name</b></label>
-      <input type="text" id="id_username"  name="username" required>
+      <input type="text" id="id_username" placeholder="Your name" name="username" required>
 
       <label for="id_email"><b>Email</b></label>
-      <input type="text" id="email" placeholder="id_email" name="email" required>
-{##}
-{#      <label for="date_of_birth"><b>Date of birth</b></label>#}
-{#      <input type="text" placeholder="" name="date_of_birth">#}
+      <input type="text" id="id_email" placeholder="Your email" name="email" required>
+
 {##}
 {#      <label for="gender"><b>Gender</b></label>#}
 {#      <input type="text" placeholder="" name="gender" required>#}
 {##}
       <label for="id_password1"><b>Password</b></label>
-      <input type="password" id="id_password1" name="password1" required>
+      <input type="password" id="id_password1" placeholder="password" name="password1" required>
 
       <label for="id_password2"><b>Password confirmation</b></label>
-      <input type="password"  id="id_password2" name="password2" required>
+      <input type="password"  id="id_password2" placeholder="password again" name="password2" required>
 
-      <label for="id_gender"><b>Gender</b></label>
-      <input type="text" id="id_gender" placeholder="gender" name="gender" required>
+      <label for="id_gender"><b>Gender</b></label>&nbsp;&nbsp;&nbsp;
+      <input type="radio" id="id_gender" name="gender" value="Male"> Male &nbsp;&nbsp;
+      <input type="radio" id="id_gender" name="gender" value="Female"> Female &nbsp;&nbsp;
+      <input type="radio" id="id_gender" name="gender" value="Other"> Other &nbsp;&nbsp; <br><br><br>
+
+      <label for="id_Birthday"><b>Date of birth</b></label>
+      <input type="date" id="id_Birthday" placeholder="" name="Birthday">
 
       <div class="clearfix">
         <button type="submit" class="signupbtn">Sign Up</button>
